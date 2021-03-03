@@ -24,7 +24,7 @@ RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app \
         && rm -r /usr/local/app/package.json
 #修改Shell超时时间为一天
 add package.json /usr/local/app/package.json
-RUN cd /elecV2P && npm install
+RUN cd /usr/local/app && npm install
 
 
 EXPOSE 80 8001 8002
