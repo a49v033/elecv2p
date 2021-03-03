@@ -9,14 +9,13 @@
 docker run --restart=always -d --name elecv2p -p 80:80 -p 8001:8001 -p 8002:8002 byxiaopeng/elecv2p
 
 # 使用 镜像及持久化存储
-docker run --restart=always -d --name elecv2p -e TZ=Asia/Shanghai -p 80:80 -p 8001:8001 -p 8002:8002 -v /elecv2p/JSFile:/usr/local/app/script/JSFile -v /elecv2p/Store:/usr/local/app/script/Store -v /elecv2p/Lists:/usr/local/app/script/Lists byxiaopeng/elecv2p
+docker run --restart=always -d --name elecv2p -p 80:80 -p 8001:8001 -p 8002:8002 -v /elecv2p/JSFile:/usr/local/app/script/JSFile -v /elecv2p/Lists:/usr/local/app/script/Lists -v /elecv2p/Store:/usr/local/app/script/Store -v /elecv2p/Shell:/usr/local/app/script/Shell -v /elecv2p/rootCA:/usr/local/app/rootCA -v /elecv2p/efss:/usr/local/app/efss byxiaopeng/elecv2p
 
 # 以上命令仅供参考，根据实际情况更改映射端口/时区/镜像等参数。
 
 # 最终推荐使用命令（最后镜像根据使用平台进行调整）
 docker run --restart=always \
   -d --name elecv2p \
-  -e TZ=Asia/Shanghai \
   -p 80:80 -p 8001:8001 -p 8002:8002 \
   -v /elecv2p/JSFile:/usr/local/app/script/JSFile \
   -v /elecv2p/Lists:/usr/local/app/script/Lists \
