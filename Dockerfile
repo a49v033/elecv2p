@@ -22,7 +22,6 @@ RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app \
         && sed -i "s/60000/86400000/g" /usr/local/app/func/exec.js \
         && rm -r /usr/local/app/script/Lists/task.list \
         && rm -r /usr/local/app/package.json
-        #&& yarn global add pm2
 #修改Shell超时时间为一天
 add package.json /usr/local/app/package.json
 RUN cd /elecV2P && npm install
