@@ -1,4 +1,4 @@
-name: elecv2p-jd
+name: elecv2p
 on:
   watch:
     types: started 
