@@ -15,8 +15,6 @@ RUN set -ex \
         && echo "Asia/Shanghai" > /etc/timezone
 RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts
 
-ADD ./ /usr/local/app
-WORKDIR /usr/local/app
 
 RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
 RUN sed -i "s/60000/86400000/g" /usr/local/app/func/exec.js
@@ -26,6 +24,7 @@ RUN rm -r /usr/local/app/package.json
 add package.json /usr/local/app/package.json
 RUN cd /usr/local/app && npm install
 
+WORKDIR /usr/local/app
 
 EXPOSE 80 8001 8002
 #拷贝JSFile目录
