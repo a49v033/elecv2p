@@ -31,3 +31,5 @@ docker rm -f elecv2p           # 先删除旧的容器
 docker pull byxiaopeng/elecv2p     # 再下载新的镜像。镜像名注意要和之前使用的相对应
 # 再使用之前的 docker run xxxx 命令重新启动一下
 ```
+使用教程请参考
+https://github.com/elecV2/elecV2P-dei/tree/master/docs
