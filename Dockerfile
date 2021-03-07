@@ -21,7 +21,7 @@ RUN sed -i "s/60000/86400000/g" /usr/local/app/func/exec.js
 
 RUN rm -r /usr/local/app/package.json
 #修改Shell超时时间为一天
-add package.json /usr/local/app/package.json
+ADD package.json /usr/local/app/package.json
 RUN cd /usr/local/app && npm install
 
 WORKDIR /usr/local/app
