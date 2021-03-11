@@ -17,7 +17,7 @@ RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts
 
 
 RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
-RUN sed -i "s/60000/86400000/g" /usr/local/app/func/exec.js
+RUN sed -i "s/60000/0/g" /usr/local/app/func/exec.js
 
 RUN rm -r /usr/local/app/package.json
 #修改Shell超时时间为一天
