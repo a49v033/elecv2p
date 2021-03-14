@@ -13,24 +13,14 @@ RUN set -ex \
         && ssh-keyscan gitee.com > /root/.ssh/known_hosts \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
+        
 RUN git clone -b $REPO_BRANCH $REPO_URL /tmp/Shell/scripts
 
-
-RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
-RUN sed -i "s/60000/0/g" /usr/local/app/func/exec.js
-
-RUN rm -r /usr/local/app/package.json
-#修改Shell超时时间为一天
-ADD package.json /usr/local/app/package.json
-RUN cd /usr/local/app && npm install
+ADD package.json /tmp/package.json
 
 WORKDIR /usr/local/app
 
 EXPOSE 80 8001 8002
-#拷贝JSFile目录
-RUN cp -r /usr/local/app/script/JSFile /tmp
-#拷贝lists目录
-RUN cp -r /usr/local/app/script/Lists /tmp
 
 ENV PATH /usr/local/app/node_modules/.bin:$PATH
 #添加变量
