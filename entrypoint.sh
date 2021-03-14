@@ -10,8 +10,7 @@ fi
 
 if [ ! -e '/usr/local/app/script/Lists/task.list' ]; then
     cp -r /tmp/Lists /usr/local/app/script
-    wget -P /usr/local/app/script/Lists -q https://raw.cnm.workers.dev/gossh520/cdcs/main/task.list
     echo "拷贝Lists代码"
 fi
-cd /usr/local/app && pm2 start index.js --name elecV2P
+cd /usr/local/app && git pull && sed -i "s/60000/0/g" /usr/local/app/func/exec.js && pm2 start index.js --name elecV2P
 tail -f /dev/null
