@@ -1,10 +1,17 @@
 #!/bin/bash
-echo "开始远程下载elecV2P仓库代码"
-git clone https://github.com/elecV2/elecV2P.git /usr/local/app
-sed -i "s/60000/0/g" /usr/local/app/func/exec.js
-rm -r /usr/local/app/package.json
-mv /tmp/package.json /usr/local/app/package.json
-echo "开始安装npm依赖"
-cd /usr/local/app && npm install
+if [ ! -e '/usr/local/app/script/Shell/scripts/jdCookie.js' ]; then
+    cp -r /tmp/Shell/scripts /usr/local/app/script/Shell
+    echo "拷贝仓库代码"
+fi
+if [ ! -e '/usr/local/app/script/JSFile/0body.js' ]; then
+    cp -r /tmp/JSFile /usr/local/app/script
+    echo "拷贝JSFile代码"
+fi
+
+if [ ! -e '/usr/local/app/script/Lists/task.list' ]; then
+    cp -r /tmp/Lists /usr/local/app/script
+    wget -P /usr/local/app/script/Lists -q https://raw.cnm.workers.dev/gossh520/cdcs/main/task.list
+    echo "拷贝Lists代码"
+fi
 cd /usr/local/app && pm2 start index.js --name elecV2P
 tail -f /dev/null
