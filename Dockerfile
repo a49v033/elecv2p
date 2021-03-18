@@ -8,7 +8,7 @@ RUN set -ex \
         
 RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
 
-RUN cd /usr/local/app && npm instal
+RUN cd /usr/local/app && npm install
 
 WORKDIR /usr/local/app
 #拷贝JSFile目录
