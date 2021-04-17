@@ -15,6 +15,8 @@ WORKDIR /usr/local/app
 RUN cp -r /usr/local/app/script/JSFile /tmp
 #拷贝lists目录
 RUN cp -r /usr/local/app/script/Lists /tmp
+#拷贝Shell目录
+RUN cp -r /usr/local/app/script/Shell /tmp
 EXPOSE 80 8001 8002
 
 ENV PATH /usr/local/app/node_modules/.bin:$PATH
