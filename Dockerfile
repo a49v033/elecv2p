@@ -10,6 +10,7 @@ RUN set -ex \
         && n latest \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && git clone https://github.com/elecV2/elecV2P.git /usr/local/app \
+        && npm install -g npm \
         && cd /usr/local/app && npm install
 
 WORKDIR /usr/local/app
