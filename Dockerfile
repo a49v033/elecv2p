@@ -2,10 +2,9 @@ FROM debian:buster-slim
 RUN set -ex \
         && apt-get -y update \
         && apt-get -y upgrade \
-        && apt install -y tzdata curl wget git bash nodejs npm \
-        && npm i -g n \
-        && PATH="$PATH" \
-        && n latest \
+        && apt install -y tzdata curl wget git bash \
+        && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash \
+        && nvm install node \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && git clone https://github.com/elecV2/elecV2P.git /usr/local/app \
         && npm install -g npm \
