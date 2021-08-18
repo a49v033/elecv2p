@@ -3,8 +3,8 @@ RUN set -ex \
         && sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
         && apt-get -y update \
         && apt-get -y upgrade \
-        && apt install -y tzdata curl wget git bash perl libc-bin \
-        && curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
+        && apt install -y tzdata curl wget git bash \
+        && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
         && apt-get install -y nodejs \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
         
