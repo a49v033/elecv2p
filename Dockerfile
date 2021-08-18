@@ -3,6 +3,9 @@ RUN set -ex \
         && apt-get -y update \
         && apt-get -y upgrade \
         && apt install -y tzdata curl wget git bash \
+        && echo 'export NVM_DIR="$HOME/.nvm"'                                       >> "$HOME/.bashrc" \
+        && echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> "$HOME/.bashrc" \
+        && echo '[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion' >> "$HOME/.bashrc" \
         && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash \
         && nvm install node \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
