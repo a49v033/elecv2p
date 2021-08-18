@@ -9,11 +9,9 @@ RUN set -ex \
         && npm i -g n --force \
         && PATH="$PATH" \
         && n latest \
-        && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-        
-RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
-
-RUN cd /usr/local/app && npm install
+        && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+        && git clone https://github.com/elecV2/elecV2P.git /usr/local/app \
+        && cd /usr/local/app && npm install
 
 WORKDIR /usr/local/app
 #拷贝JSFile目录
