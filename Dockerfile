@@ -3,7 +3,7 @@ RUN set -ex \
         && mv /var/lib/dpkg/info/ /var/lib/dpkg/info_old/ \
         && mkdir /var/lib/dpkg/info/ \
         && apt-get -y update \
-        && apt install -y tzdata curl wget git bash lsb-release gnupg \
+        && apt install -y tzdata curl wget git bash lsb-release gnupg python3 python3-pip python3-distutils\
         && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
         && apt-get install -y nodejs \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
