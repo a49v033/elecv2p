@@ -4,6 +4,7 @@ RUN set -ex \
         && apt-get -y upgrade \
         && apt install -y tzdata curl wget git bash \
         && apt-get install -y nodejs npm \
+        && npm config set unsafe-perm true \
         && npm install -g n \
         && PATH="$PATH" \
         && n stable \
