@@ -4,7 +4,6 @@ RUN set -ex \
         && apt-get -y update \
         && apt-get -y upgrade \
         && apt install -y tzdata curl wget git bash \
-        && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
         && apt-get install -y nodejs \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
         
