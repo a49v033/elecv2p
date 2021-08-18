@@ -13,7 +13,8 @@ RUN set -ex \
         && pip install -r /root/requirements.txt \
         && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
         && apt-get install -y nodejs \
-        && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+        && cp /usr/share/zoneinfo/$TZ /etc/localtime \
+        && echo $TZ > /etc/timezone \
         && git config --global pull.ff only \
         && git clone https://github.com/elecV2/elecV2P.git /usr/local/app \
         && npm install -g npm \
