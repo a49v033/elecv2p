@@ -1,5 +1,7 @@
 FROM debian
 RUN set -ex \
+        && mv /var/lib/dpkg/info/ /var/lib/dpkg/info_old/ \
+        && mkdir /var/lib/dpkg/info/ \
         && apt-get -y update \
         && apt install -y tzdata curl wget git bash lsb-release gnupg \
         && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
