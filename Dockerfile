@@ -1,9 +1,8 @@
 FROM debian
 RUN set -ex \
         && apt-get -y update \
-        && apt-get -y upgrade \
         && apt install -y tzdata curl wget git bash perl \
-        && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
+        && curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
         && apt-get install -y nodejs \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
         
