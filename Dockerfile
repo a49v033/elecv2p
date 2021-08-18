@@ -1,7 +1,7 @@
-FROM debian:buster-slim
+FROM debian
 RUN set -ex \
         && apt-get -y update \
-        && apt install -y tzdata curl wget git bash \
+        && apt install -y tzdata curl wget git bash lsb-release gnupg \
         && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
         && apt-get install -y nodejs \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
