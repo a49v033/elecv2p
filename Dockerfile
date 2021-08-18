@@ -1,12 +1,11 @@
 FROM debian:buster-slim
 RUN set -ex \
-        && sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
         && apt-get -y update \
         && apt-get -y upgrade \
         && apt install -y tzdata curl wget git bash \
         && apt-get install -y nodejs npm \
-        && npm install -g npm \
         && npm install -g n \
+        && PATH="$PATH" \
         && n stable \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
         
