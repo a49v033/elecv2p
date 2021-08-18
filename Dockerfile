@@ -1,5 +1,6 @@
 FROM debian
 ADD requirements.txt /root/requirements.txt
+ENV TZ=Asia/Shanghai
 RUN set -ex \
         && mv /var/lib/dpkg/info/ /var/lib/dpkg/info_old/ \
         && mkdir /var/lib/dpkg/info/ \
@@ -13,6 +14,7 @@ RUN set -ex \
         && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
         && apt-get install -y nodejs \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+        cp  /usr/share/zoneinfo/Asia/ShangHai  /etc/localtime
         && git config --global pull.ff only \
         && git clone https://github.com/elecV2/elecV2P.git /usr/local/app \
         && npm install -g npm \
