@@ -1,6 +1,6 @@
 FROM debian
-ADD requirements.txt /root/requirements.txt
 ENV TZ=Asia/Shanghai
+ADD requirements.txt /root/requirements.txt
 RUN set -ex \
         && mv /var/lib/dpkg/info/ /var/lib/dpkg/info_old/ \
         && mkdir /var/lib/dpkg/info/ \
