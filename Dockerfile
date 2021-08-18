@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:stable-slim
 RUN set -ex \
         && sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
         && apt-get -y update \
