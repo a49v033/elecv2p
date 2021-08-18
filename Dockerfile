@@ -4,7 +4,7 @@ RUN set -ex \
         && mv /var/lib/dpkg/info/ /var/lib/dpkg/info_old/ \
         && mkdir /var/lib/dpkg/info/ \
         && apt-get -y update \
-        && apt install -y tzdata curl wget git bash lsb-release gnupg gcc g++ make libgl1-mesa-glx libglib2.0-dev python3 python3-pip python3-distutils \
+        && apt install -y tzdata curl wget git bash lsb-release gnupg gcc g++ make libgl1-mesa-glx libglib2.0-dev procps python3 python3-pip python3-distutils \
         && ln -sf /usr/bin/python3 /usr/local/bin/python \
         && pip install -r /root/requirements.txt \
         && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
