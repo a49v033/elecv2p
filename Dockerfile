@@ -5,6 +5,9 @@ RUN set -ex \
         && apt-get -y upgrade \
         && apt install -y tzdata curl wget git bash \
         && apt-get install -y nodejs npm \
+        && npm install -g npm \
+        && npm install -g n \
+        && n stable \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
         
 RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
