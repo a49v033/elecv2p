@@ -1,10 +1,9 @@
-FROM alpine
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+FROM debian
 RUN set -ex \
-        && apk update && apk upgrade \
-        && apk add tzdata curl wget git bash perl nodejs npm \
-        && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-        && echo "Asia/Shanghai" > /etc/timezone
+        && apt-get -y update \
+        && apt-get -y upgrade \
+        && apt install -y tzdata curl wget git bash perl nodejs npm \
+        && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
         
 RUN git clone https://github.com/elecV2/elecV2P.git /usr/local/app
 
