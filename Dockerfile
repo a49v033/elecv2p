@@ -1,5 +1,6 @@
 FROM debian:buster-slim
 RUN set -ex \
+        && apt-get -y update \
         && apt install -y tzdata curl wget git bash \
         && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
         && apt-get install -y nodejs \
