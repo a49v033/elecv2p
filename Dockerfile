@@ -16,7 +16,10 @@ RUN set -ex \
         && git config --global pull.ff only \
         && git clone https://github.com/elecV2/elecV2P.git /usr/local/app \
         && npm install -g npm \
-        && cd /usr/local/app && npm install
+        && cd /usr/local/app \ 
+        && npm install \
+        && rm -rf /root/.npm \
+        && rm -rf /root/.cache 
 
 WORKDIR /usr/local/app
 #拷贝JSFile目录
