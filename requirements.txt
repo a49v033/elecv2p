@@ -9,10 +9,10 @@ pyppeteer~=0.2.5
 pillow
 moment~=0.12.1
 python-telegram-bot
-opencv-python-headless
 ujson~=4.0.2
 peewee~=3.14.4
-opencv-python~=4.5.2.54
+opencv-python~=4.5.3.56
+opencv-python-headless~=4.5.3.56
 numpy~=1.21.0
 python-dateutil~=2.8.1
 urllib3~=1.26.6
