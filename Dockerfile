@@ -4,9 +4,8 @@ RUN set -ex \
         && apt-get -y upgrade \
         && apt install -y tzdata curl wget git bash \
         && apt-get install -y nodejs npm \
-        && npm install -g npm \
         && npm config set unsafe-perm true \
-        && npm i -g n --force \
+        && npm i -g n \
         && PATH="$PATH" \
         && n latest \
         && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
