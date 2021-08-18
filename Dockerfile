@@ -5,6 +5,9 @@ RUN set -ex \
         && mkdir /var/lib/dpkg/info/ \
         && apt-get -y update \
         && apt install -y tzdata curl wget git bash lsb-release gnupg gcc g++ make libgl1-mesa-glx libglib2.0-dev procps python3 python3-pip python3-distutils \
+        gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc-s1 libgconf-2-4 libgdk-pixbuf2.0-0 \
+        libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 \
+        libxi6 libxrandr2 libxrender1 libxss1 libxtst6 fonts-liberation libnss3 lsb-release xdg-utils \
         && ln -sf /usr/bin/python3 /usr/local/bin/python \
         && pip install -r /root/requirements.txt \
         && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
